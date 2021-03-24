@@ -53,7 +53,7 @@ Tutorial has been uploaded on YouTube <img src="https://www.youtube.com/about/st
 
 Glitch: [![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/import/github/Khanmanan/automod-bot)
 
-Repl: [![Run on Repl.it](https://repl.it/badge/github/Khanmanan/automod-bot)](https://repl.it/github/Khanmanan/automod-bot)
+### Frok Latest version on replit [![Run on Repl.it](https://repl.it/badge/github/Khanmanan/automod-bot)](https://replit.com/@mananhussin/automod-bot-2#.env)
 
 ### START THE PROJECT IF U LIKE :)
 ##copyright ©️ 2021 Automod v12:
