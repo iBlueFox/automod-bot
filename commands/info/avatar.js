@@ -1,30 +1,39 @@
-const discord = require("discord.js")
+const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
+const { Color } = require("../../config.json");
 
 module.exports = {
   name: "avatar",
-  aliases: ["av"],
-  category: "info",
-  description: "Get dp of any user",
+  aliases: ["icon", "pfp"],
+  category: "fun",
+  description: "Show Member Avatar!",
+  usage: "Avatar | <Mention Member>",
+  accessableby: "everyone",
   run: async (client, message, args) => {
-    
-    let target
-    
-    if(message.mentions.users.first()) {
-      target = message.mentions.users.first();
-    } else if(args[0]) {
-        target = message.guild.members.cache.get(args[0]).user;
-      } else {
-        target = message.author
-      }
-    
-    let avatar = target.displayAvatarURL({dynamic: true, size: 1024})
-    
-      let embed = new discord.MessageEmbed()
-      
-      embed.setDescription(`[Download](${avatar})`)
-      embed.setImage(avatar)
-      embed.setColor("RANDOM")
-      message.channel.send(embed)
-         
+    //Start
+
+    let Member = message.mentions.users.first() || message.guild.member(args[0]) || message.author;
+
+    let embed = new Discord.MessageEmbed()
+      .setColor(Color)
+      .addField(
+        "Links",
+        `[Png](${Member.displayAvatarURL({
+          format: "png",
+          dynamic: true
+        })}) | [Jpg](${Member.displayAvatarURL({
+          format: "jpg",
+          dynamic: true
+        })}) | [Webp](${Member.displayAvatarURL({
+          format: "webp",
+          dynamic: true
+        })})`
+      )
+      .setImage(Member.displayAvatarURL({ dynamic: true }))
+      .setTimestamp();
+
+    message.channel.send(embed);
+
+    //End
   }
-}
+};
